@@ -1,12 +1,17 @@
-public abstract class Vehicle {
+abstract class Vehicle {
+    // A field to store the base price of the vehicle
     protected int basePrice;
 
-    public int calculatePrice() {
-        return basePrice;
+    // A constructor to set the base price of the vehicle
+    public Vehicle(int basePrice) {
+        this.basePrice = basePrice;
     }
 
-    @Override
+    // An abstract method to get the total price of the vehicle
+    public abstract int getTotalPrice();
+
+    // A method to return a string representation of the vehicle
     public String toString() {
-        return getClass().getSimpleName() + " with a base price of " + basePrice + " TL";
+        return "Vehicle with a total price of " + getTotalPrice() + " TL";
     }
 }
